@@ -1,4 +1,6 @@
 import React from 'react';
+import type { ViewStyle } from 'react-native';
+import type { StyleProp } from 'react-native';
 import { View } from 'react-native';
 import {
   GestureHandlerRootView,
@@ -18,7 +20,7 @@ interface ConeSliderProps {
   min: number;
   max: number;
   onValueChange?: (value: number) => void;
-  containerStyle?: Object;
+  containerStyle?: StyleProp<ViewStyle>;
 }
 type GestureContext = {
   startX: number;
