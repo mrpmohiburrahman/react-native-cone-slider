@@ -14,6 +14,7 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated';
 import { clamp } from 'react-native-redash';
+
 interface ConeSliderProps {
   width: number;
   height: number;
@@ -21,7 +22,10 @@ interface ConeSliderProps {
   max: number;
   onValueChange?: (value: number) => void;
   containerStyle?: StyleProp<ViewStyle>;
+  sliderBackgroundColor?: string; // new prop for slider background color
+  circleBackgroundColor?: string; // new prop for circle background color
 }
+
 type GestureContext = {
   startX: number;
 };
@@ -33,6 +37,8 @@ export const ConeSlider: React.FC<ConeSliderProps> = ({
   max,
   onValueChange,
   containerStyle,
+  sliderBackgroundColor = '#CCCCCC', // default value if not provided
+  circleBackgroundColor = 'grey', // default value if not provided
 }) => {
   const translateX = useSharedValue(0);
   const range = max - min;
@@ -78,7 +84,7 @@ export const ConeSlider: React.FC<ConeSliderProps> = ({
               borderBottomWidth: height / 6,
               borderLeftColor: 'red',
               borderLeftWidth: 0,
-              borderRightColor: '#CCCCCC',
+              borderRightColor: sliderBackgroundColor, // applied here
               borderRightWidth: width,
               borderStyle: 'solid',
               borderTopColor: 'transparent',
@@ -92,7 +98,7 @@ export const ConeSlider: React.FC<ConeSliderProps> = ({
             <Animated.View
               style={[
                 {
-                  backgroundColor: 'grey',
+                  backgroundColor: circleBackgroundColor, // applied here
                   borderRadius: 25,
                   height: 30,
                   position: 'absolute',
