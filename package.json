@@ -1,6 +1,6 @@
 {
   "name": "react-native-cone-slider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cone shape slider in react-native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
