@@ -22,8 +22,8 @@ interface ConeSliderProps {
   max: number;
   onValueChange?: (value: number) => void;
   containerStyle?: StyleProp<ViewStyle>;
-  sliderBackgroundColor?: string; // new prop for slider background color
-  circleBackgroundColor?: string; // new prop for circle background color
+  sliderBackgroundColor?: string;
+  circleBackgroundColor?: string;
 }
 
 type GestureContext = {
@@ -37,9 +37,10 @@ export const ConeSlider: React.FC<ConeSliderProps> = ({
   max,
   onValueChange,
   containerStyle,
-  sliderBackgroundColor = '#CCCCCC', // default value if not provided
-  circleBackgroundColor = 'grey', // default value if not provided
+  sliderBackgroundColor = '#CCCCCC',
+  circleBackgroundColor = 'grey',
 }) => {
+  const circleRadius = 15;
   const translateX = useSharedValue(0);
   const range = max - min;
 
@@ -54,9 +55,13 @@ export const ConeSlider: React.FC<ConeSliderProps> = ({
     GestureContext
   >({
     onActive: (event, ctx) => {
-      translateX.value = clamp(ctx.startX + event.translationX, 0, width - 30);
+      translateX.value = clamp(
+        ctx.startX + event.translationX,
+        0,
+        width - circleRadius * 2
+      );
       runOnJS(onValueChangeSafe)(
-        (translateX.value / (width - 30)) * range + min
+        (translateX.value / (width - circleRadius * 2)) * range + min
       );
     },
     onStart: (_, ctx) => {
@@ -84,13 +89,15 @@ export const ConeSlider: React.FC<ConeSliderProps> = ({
               borderBottomWidth: height / 6,
               borderLeftColor: 'red',
               borderLeftWidth: 0,
-              borderRightColor: sliderBackgroundColor, // applied here
+              borderRightColor: sliderBackgroundColor,
               borderRightWidth: width,
               borderStyle: 'solid',
               borderTopColor: 'transparent',
               borderTopWidth: height / 7,
               height: 0,
               width: 0,
+              borderTopRightRadius: height / 6, // adjust this to get desired rounded effect
+              borderBottomRightRadius: height / 6, // adjust this to get desired rounded effect
             }}
           />
 
@@ -98,16 +105,32 @@ export const ConeSlider: React.FC<ConeSliderProps> = ({
             <Animated.View
               style={[
                 {
-                  backgroundColor: circleBackgroundColor, // applied here
-                  borderRadius: 25,
-                  height: 30,
+                  // borderRadius: 25,
+                  // height: 30,
+                  // top: height / 4 - 25,
+                  // width: circleRadius * 2,
+                  backgroundColor: circleBackgroundColor,
+                  borderRadius: circleRadius + 10,
+                  height: circleRadius * 2,
                   position: 'absolute',
-                  top: height / 4 - 25,
+                  top: height / 4 - circleRadius - 10,
                   width: 30,
                 },
                 circleStyle,
               ]}
-            />
+            >
+              <View // This is the pseudo-circle
+                style={{
+                  position: 'absolute',
+                  right: -circleRadius,
+                  top: 0,
+                  // backgroundColor: sliderBackgroundColor,
+                  borderRadius: circleRadius,
+                  height: circleRadius * 2,
+                  width: circleRadius * 2,
+                }}
+              />
+            </Animated.View>
           </PanGestureHandler>
         </View>
       </View>
