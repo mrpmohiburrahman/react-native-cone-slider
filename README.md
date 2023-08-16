@@ -29,15 +29,20 @@ import { ConeSlider } from 'react-native-cone-slider';
     onValueChange={(value: number) => {
         console.log(`🚀 ~ file: README.md:30 ~ value:`, value);
     }}
-    containerStyle={{
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 100,
-    }}
+    containerStyle={{ backgroundColor: '#fff' }}
 />
 ```
+
+## Props
+
+| Name |description| required |
+|---------|---------|---------|
+| height  | Height of slider   | Yes   |
+| width   | Width  of slider   | Yes   |
+| min     | Minimum value of slider   | Yes   |
+| maximum   | Maximum value of slider   | Yes   |
+| onValueChange   | Function to get the values from slider   | No   |
+| containerStyle  | Style Object, Applied to Slider Container   | No   |  Applicable|
 
 ## Contributing
 
