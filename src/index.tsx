@@ -24,6 +24,7 @@ interface ConeSliderProps {
   containerStyle?: StyleProp<ViewStyle>;
   sliderBackgroundColor?: string;
   circleBackgroundColor?: string;
+  rotationDegree?: number; // Add this prop
 }
 
 type GestureContext = {
@@ -39,6 +40,7 @@ export const ConeSlider: React.FC<ConeSliderProps> = ({
   containerStyle,
   sliderBackgroundColor = '#CCCCCC',
   circleBackgroundColor = 'grey',
+  rotationDegree = 0, // Default to 0 degrees if not provided
 }) => {
   const circleRadius = 15;
   const translateX = useSharedValue(0);
@@ -73,12 +75,18 @@ export const ConeSlider: React.FC<ConeSliderProps> = ({
     transform: [{ translateX: translateX.value }],
   }));
 
+  const mainContainerStyle = {
+    transform: [{ rotate: `${rotationDegree}deg` }],
+    transformOrigin: { x: width / 2, y: height / 2 }, // Set the focal point to the center
+  };
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View
         style={[
           { flex: 1, justifyContent: 'center', alignItems: 'center' },
           containerStyle,
+          mainContainerStyle, // Add the rotation style here
         ]}
       >
         <View style={{ height, overflow: 'hidden', width }}>
