@@ -5,17 +5,38 @@ Cone shape slider in react-native
 ## Installation
 
 ```sh
+yarn add react-native-cone-slider
+```
+
+or
+
+```sh
 npm install react-native-cone-slider
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 'react-native-cone-slider';
+import { ConeSlider } from 'react-native-cone-slider';
 
 // ...
 
-const result = await multiply(3, 7);
+<ConeSlider
+    height={100}
+    width={200}
+    min={0}
+    max={100}
+    onValueChange={(value: number) => {
+        console.log(`🚀 ~ file: README.md:30 ~ value:`, value);
+    }}
+    containerStyle={{
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 100,
+    }}
+/>
 ```
 
 ## Contributing
