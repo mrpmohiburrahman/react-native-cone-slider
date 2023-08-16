@@ -27,8 +27,6 @@ export default function App() {
 
       <ConeSlider
         rotationDegree={0}
-        sliderBackgroundColor="red"
-        circleBackgroundColor="teal"
         height={100}
         width={200}
         min={0}
