@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Text, View } from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
 import { ConeSlider } from 'react-native-cone-slider';
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center' }}>
+    <SafeAreaView style={{ flex: 1, justifyContent: 'center' }}>
       <View>
         <Text
           style={{
@@ -25,46 +25,17 @@ export default function App() {
         </Text>
       </View>
 
-      <View>
-        <ConeSlider
-          height={100}
-          width={200}
-          min={0}
-          max={100}
-          onValueChange={handleValueChange}
-          containerStyle={{
-            flex: 1,
-            backgroundColor: '#fff',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginTop: 100,
-          }}
-        />
-      </View>
-    </View>
+      <ConeSlider
+        rotationDegree={0}
+        sliderBackgroundColor="red"
+        circleBackgroundColor="teal"
+        height={100}
+        width={200}
+        min={0}
+        max={100}
+        onValueChange={handleValueChange}
+        containerStyle={{ backgroundColor: '#fff' }}
+      />
+    </SafeAreaView>
   );
-  // const [result, setResult] = React.useState<number | undefined>();
-
-  // React.useEffect(() => {
-  //   multiply(3, 7).then(setResult);
-  // }, []);
-
-  // return (
-  //   <View style={styles.container}>
-  //     <Text>Result: {result}</Text>
-  //   </View>
-  // );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-//   box: {
-//     width: 60,
-//     height: 60,
-//     marginVertical: 20,
-//   },
-// });
