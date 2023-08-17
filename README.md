@@ -14,6 +14,12 @@ or
 npm install react-native-cone-slider
 ```
 
+### Dependencies
+
+---
+This library depends on [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/), [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/docs/), [react-native-redash](https://wcandillon.gitbook.io/redash/).
+Please, install these beforehand.
+
 ## Usage
 
 ```js
