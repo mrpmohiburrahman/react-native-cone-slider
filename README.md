@@ -55,6 +55,8 @@ Generally, the width will be doubled the value of height, ( this is not exactly 
 
 ## Contributing
 
+Help me make this library great.
+
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
 ## License
