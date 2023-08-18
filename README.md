@@ -4,7 +4,7 @@ Cone shape slider in react-native
 
 ## Demo
 
-[react-native-cone-slider in action](https://github.com/mrpmohiburrahman/react-native-cone-slider/blob/main/example/cone-slider-demo.gif?raw=true)
+<img  alt="react-native-cone-slider in action" src="https://github.com/mrpmohiburrahman/react-native-cone-slider/blob/main/example/cone-slider-demo.gif?raw=true" width="150" hight="200"/>  
 
 ## Installation
 
