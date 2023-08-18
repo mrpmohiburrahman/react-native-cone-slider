@@ -2,6 +2,10 @@
 
 Cone shape slider in react-native
 
+## Demo
+
+[react-native-cone-slider in action](https://github.com/mrpmohiburrahman/react-native-cone-slider/blob/main/example/cone-slider-demo.gif?raw=true)
+
 ## Installation
 
 ```sh
