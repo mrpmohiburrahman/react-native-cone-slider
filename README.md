@@ -73,6 +73,18 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 
 MIT
 
----
+## Social
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+<!-- [![Twitter Follow](https://img.shields.io/twitter/follow/mrp_mohibur?label=Follow&style=social)](https://twitter.com/mrp_mohibur)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/mrpmohiburrahman/)](https://www.linkedin.com/in/mrpmohiburrahman/)
+[![Reddit User Karma](https://img.shields.io/reddit/user-karma/combined/mrpm0h18urr4hm4n?style=social)](https://www.reddit.com/user/mrpm0h18urr4hm4n/) -->
+
+<a href="https://twitter.com/mrp_mohibur" target="_blank">
+    <img src="https://img.shields.io/twitter/follow/mrp_mohibur?label=Follow&style=social" alt="Twitter Follow" style="height: auto !important; width: 100px !important;" />
+</a>
+<a href="https://www.linkedin.com/in/mrpmohiburrahman/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" style="height: auto !important; width: 120px !important;" />
+</a>
+<a href="https://www.reddit.com/user/mrpm0h18urr4hm4n/" target="_blank">
+    <img src="https://img.shields.io/reddit/user-karma/combined/mrpm0h18urr4hm4n?style=social" alt="Reddit User Karma" style="height: auto !important; width: 320px !important;" />
+</a>
